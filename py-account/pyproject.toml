@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "py-account"
+version = "0.1.0"
+description = "Account management service"
+authors = ["Indra Gunawan <ingunawandra@gmail.com>"]
+packages = [
+    { include = "app" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.0"}
+asyncpg = "^0.29.0"
+pydantic = "^2.5.0"
+alembic = "^1.13.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.0"
+black = "^23.7.0"
+isort = "^5.12.0"
+mypy = "^1.5.0"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+
+[tool.black]
+line-length = 100
+target-version = ['py312']
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
