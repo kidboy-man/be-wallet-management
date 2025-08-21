@@ -73,9 +73,3 @@ logs/
 # Database
 *.db
 *.sqlite3
-
-# Poetry
-poetry.lock
-
-# Project specific
-# .assistant/
